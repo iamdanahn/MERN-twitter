@@ -3,19 +3,28 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose')
 const db = require("./config/keys.js").mongoURI;
-
 const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
-
+const User = require('./models/User')
 
 mongoose
 	.connect(db, { useNewUrlParser: true })
 	.then(() => console.log("Connected to MongoDB successfully"))
 	.catch((err) => console.log(err));
 
+app.use(bodyParser.urlencoded({ 
+	extended: false
+}))
+
+app.use(bodyParser.json());
+
 app.get("/", (req, res) => {
-	console.log(res)
-	// debugger;
+	const user = new User({
+		handle: "Test1",
+		email: "test1@email.com",
+		password: "test1123"
+	})
+	user.save()
 	res.send("Get in ma bellay")
 });
 
