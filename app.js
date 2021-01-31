@@ -14,6 +14,8 @@ mongoose
 	.catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
+	console.log(res)
+	// debugger;
 	res.send("Get in ma bellay")
 });
 
