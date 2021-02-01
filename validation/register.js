@@ -8,6 +8,7 @@ module.exports = function validateRegisterInput(data) {
   data.handle = validText(data.handle) ? data.handle : '';
   data.email = validText(data.email) ? data.email : '';
   data.password = validText(data.password) ? data.password : '';
+  //pw2 is re-enter pw field
   data.password2 = validText(data.password2) ? data.password2 : '';
 
   if (!Validator.isLength(data.handle, { min: 2, max: 30 })) {
@@ -38,6 +39,7 @@ module.exports = function validateRegisterInput(data) {
     errors.password2 = 'Confirm Password field is required';
   }
 
+  // checks for equality
   if (!Validator.equals(data.password, data.password2)) {
     errors.password2 = 'Passwords must match';
   }

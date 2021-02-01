@@ -47,4 +47,7 @@ const bcrypt = require('bcryptjs');
 
 ## Validation
   - allows model level validations in the same place
-  
+  - `/validation/...`
+    -`/valid-text` holds str === 'string' - confirms input is string
+    -`register` holds registration validation
+    -`login` holds login validation
