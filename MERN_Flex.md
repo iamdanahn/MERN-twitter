@@ -43,3 +43,8 @@ const bcrypt = require('bcryptjs');
 ## Passport 
   - Authenticates token and constructs private routes
   - Token is sent in header of every API request
+
+
+## Validation
+  - allows model level validations in the same place
+  
