@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose'); // imports mongoose pkg
+const Schema = mongoose.Schema;       // Gets #Schema funtionality
 
 const UserSchema = new Schema({
   handle: {
@@ -18,4 +18,5 @@ const UserSchema = new Schema({
   timestamps: true
 })
 
+// exports User as mongoose.model...
 module.exports = User = mongoose.model('User', UserSchema);
